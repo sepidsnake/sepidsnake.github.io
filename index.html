@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head><title>Sync Monitor</title></head>
-<body style="text-align: center; font-family: Arial; padding-top: 50px;">
+<head><title>Secure Sync</title></head>
+<body style="text-align: center; font-family: sans-serif; padding-top: 100px; background: #f4f4f4;">
     
-    <h1>آمار کلیک‌های زنده:</h1>
-    <div id="count" style="font-size: 50px; color: #2ecc71; font-weight: bold;">Loading...</div>
-
-    <p>در حال اتصال به مقصد...</p>
+    <div style="background: white; display: inline-block; padding: 20px; border-radius: 10px; shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <h2>وضعیت اتصال: <span style="color: green;">فعال</span></h2>
+        <p>در حال همگام‌سازی با سرور مرکزی...</p>
+        
+        <div style="margin: 20px 0;">
+            <img src="https://counter.ghre.workers.dev/sepidsnake/hits.svg" alt="Loading Stats..." style="transform: scale(1.5);">
+        </div>
+    </div>
 
     <script>
-        // گرفتن آمار و نمایش به صورت متن
-        fetch('https://api.countapi.xyz/hit/sepidsnake_final_test/clicks')
-            .then(res => res.json())
-            .then(res => {
-                document.getElementById('count').innerText = res.value;
-            })
-            .catch(() => {
-                document.getElementById('count').innerText = "ترافیک در حال ثبت...";
-            });
-
-        // انتقال بعد از ۵ ثانیه
+        // ۵ ثانیه صبر برای لود شدن آمار، سپس انتقال
         setTimeout(function() {
             window.location.href = "https://www.google.com";
         }, 5000);
