@@ -1,37 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head><title>Secure Sync</title></head>
-<body style="text-align: center; font-family: sans-serif; padding-top: 100px; background: #f4f4f4;">
-    
-    <div style="background: white; display: inline-block; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
-        <h2 style="color: #333;">وضعیت سیستم: <span style="color: green;">فعال</span></h2>
-        
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-        
-        <p style="font-size: 18px; color: #666;">تعداد کلیک‌های ثبت شده تا این لحظه:</p>
-        
-        <div id="counter" style="font-size: 60px; font-weight: bold; color: #2ecc71; margin: 20px 0;">...</div>
-    </div>
-
+<head><title>System Sync</title></head>
+<body style="text-align: center; font-family: sans-serif; padding-top: 100px;">
+    <h1>وضعیت اتصال: <span style="color: green;">فعال</span></h1>
+    <p>در حال انتقال به سرور امن...</p>
     <script>
-        // تابعی برای گرفتن آمار و نمایش آن
-        async function getStats() {
-            try {
-                // استفاده از سرویس آمارگیر متنی
-                const response = await fetch('https://api.countapi.xyz/hit/sepidsnake-ext-sync/clicks');
-                const data = await response.json();
-                document.getElementById('counter').innerText = data.value;
-            } catch (error) {
-                document.getElementById('counter').innerText = "در حال محاسبه...";
-            }
-        }
-
-        getStats();
-
-        // انتقال به مقصد بعد از ۶ ثانیه (تا وقت داشته باشی آمار را ببینی)
         setTimeout(function() {
             window.location.href = "https://www.google.com";
-        }, 6000);
+        }, 2000);
     </script>
 </body>
 </html>
