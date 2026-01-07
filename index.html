@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><title>Sync Service Monitoring</title></head>
-<body style="text-align: center; font-family: sans-serif; padding-top: 50px;">
+<head><title>Sync Monitor</title></head>
+<body style="text-align: center; font-family: Arial; padding-top: 50px;">
     
-    <h2>تعداد دفعاتی که سایت باز شده (شکارها):</h2>
-    
-    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsepidsnake%2Fapi-sync-service&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Total%20Hits&edge_flat=false" style="transform: scale(2);">
+    <h1>آمار کلیک‌های زنده:</h1>
+    <div id="count" style="font-size: 50px; color: #2ecc71; font-weight: bold;">Loading...</div>
 
-    <p style="margin-top: 30px;">تا ۵ ثانیه دیگر به سرور مقصد منتقل می‌شوید...</p>
+    <p>در حال اتصال به مقصد...</p>
 
     <script>
+        // گرفتن آمار و نمایش به صورت متن
+        fetch('https://api.countapi.xyz/hit/sepidsnake_final_test/clicks')
+            .then(res => res.json())
+            .then(res => {
+                document.getElementById('count').innerText = res.value;
+            })
+            .catch(() => {
+                document.getElementById('count').innerText = "ترافیک در حال ثبت...";
+            });
+
+        // انتقال بعد از ۵ ثانیه
         setTimeout(function() {
             window.location.href = "https://www.google.com";
         }, 5000);
