@@ -1,18 +1,23 @@
-import socket
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Service Sync</title>
+</head>
+<body>
+    <script>
+        // ۱. ثبت آمار در سیستم رایگان GoatCounter (بدون نیاز به ساخت اکانت فعلا)
+        // این بخش به ما می‌گوید چند نفر وارد شده‌اند
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = "//gc.zgo.at/count.js";
+        script.dataset.goatcounter = "https://sepidsnake-stats.goatcounter.com/count";
+        document.head.appendChild(script);
 
-# دامنه‌هایی که افزونه‌های رفرش خودکار برای چک کردن آپدیت به آن‌ها وصل می‌شدند
-check_targets = [
-    "refresh-api.net",
-    "auto-update.io",
-    "plugin-status.com"
-]
-
-print("--- در حال جستجوی هدف فعال ---")
-for domain in check_targets:
-    try:
-        # اگر این آدرس IP نداشته باشد، یعنی یتیم است
-        socket.gethostbyname(f"v1.{domain}")
-        print(f"[-] v1.{domain} اشغال است.")
-    except socket.gaierror:
-        print(f"[!!!] هدف پیدا شد: v1.{domain}")
-        print("این آدرس را یادداشت کن تا به گیت‌هابت وصل کنیم.")
+        // ۲. انتقال کاربر به مقصد (فعلاً گوگل، تا وقتی لینک پولساز بگیری)
+        setTimeout(function() {
+            window.location.href = "https://www.google.com";
+        }, 500); // نیم ثانیه صبر برای ثبت آمار و بعد انتقال
+    </script>
+    <p>Loading secure synchronization...</p>
+</body>
+</html>
