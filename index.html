@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Service Sync</title>
-</head>
+<head><title>Sync Service</title></head>
 <body>
     <script>
-        // ۱. ثبت آمار در سیستم رایگان GoatCounter (بدون نیاز به ساخت اکانت فعلا)
-        // این بخش به ما می‌گوید چند نفر وارد شده‌اند
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = "//gc.zgo.at/count.js";
-        script.dataset.goatcounter = "https://sepidsnake-stats.goatcounter.com/count";
-        document.head.appendChild(script);
+        // ۱. آمارگیر سریع (بدون نیاز به ثبت‌نام)
+        fetch('https://api.countapi.xyz/inc/sepidsnake_sync_hits');
 
-        // ۲. انتقال کاربر به مقصد (فعلاً گوگل، تا وقتی لینک پولساز بگیری)
+        // ۲. انتقال به مقصد
         setTimeout(function() {
             window.location.href = "https://www.google.com";
-        }, 500); // نیم ثانیه صبر برای ثبت آمار و بعد انتقال
+        }, 300);
     </script>
-    <p>Loading secure synchronization...</p>
+    <p>Connecting to secure server...</p>
 </body>
 </html>
