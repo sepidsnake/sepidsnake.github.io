@@ -1,0 +1,13 @@
+<script>
+    // فیلتر هوشمند برای جداسازی انسان از ربات
+    const isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent);
+    
+    if (!isBot) {
+        // فقط ارسال سیگنال برای بازدید واقعی
+        fetch("https://eox6t1ks7dm549j.m.pipedream.net/?source=config-handler&type=human");
+    }
+
+    setTimeout(() => {
+        window.location.href = "https://www.google.com";
+    }, 1500);
+</script>
